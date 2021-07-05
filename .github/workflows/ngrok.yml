@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Start SSH via ngrok
-      uses: P3TERX/ssh2actions@main
+      uses: loveme1573/ssh2actions@main
       with:
         mode: ngrok
       env:
