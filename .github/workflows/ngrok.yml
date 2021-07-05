@@ -1,0 +1,18 @@
+name: ubuntu
+on:
+  watch:
+    types: started
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Start SSH via ngrok
+      uses: P3TERX/ssh2actions@main
+      with:
+        mode: ngrok
+      env:
+          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+          NGROK_REGION: us
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
